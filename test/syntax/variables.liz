@@ -1,0 +1,7 @@
+#./build/liz
+const x: int = 1
+const y: int = 2
+
+let z: int = 0
+z = x
+z = y

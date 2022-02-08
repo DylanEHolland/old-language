@@ -1,0 +1,19 @@
+struct bag_item {
+    value: any
+    next: bag_item || none
+}
+
+struct bag {
+    head: bag_item || null,
+    count: integer
+    push: null = value: any => {
+        let item = new bag_item
+        item.value = value
+        item.next = this.head
+        this.head = item
+    }
+}
+
+let my_bag = new bag # Will automatically be of type bag
+my_bag.add("hello")
+my_bag.add("world")
