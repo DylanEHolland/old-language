@@ -1,5 +1,6 @@
 #include <liz.h>
 #include <frontend/tokenize.h>
+#include <frontend/parser.h>
 
 #include <iostream>
 #include <vector>
@@ -19,7 +20,9 @@ namespace liz {
             std::string result(sz, '\0');
             f.read(result.data(), sz);
 
-            frontend::tokenize(result);
+            auto tokens = frontend::tokenize(result);
+            auto tree = frontend::parse(tokens);
+            std::cout << "\n===\n\n" << frontend::dumpTree(tree);
         }
     }
 

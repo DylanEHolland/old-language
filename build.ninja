@@ -8,7 +8,7 @@ configure_args =
 
 root = .
 builddir = build
-cxx = g++ -I./include -std=c++20
+cxx = g++ -g -I./include -std=c++20
 ar = ar
 clags = -g -Wall
 ldflags = -L$builddir
@@ -33,4 +33,5 @@ rule copy
 
 build $builddir/main.o: cxx source/main.cc
 build $builddir/frontend/tokenize.o: cxx source/frontend/tokenize.cc
-build $builddir/liz: link $builddir/main.o $builddir/frontend/tokenize.o
+build $builddir/frontend/parser.o: cxx source/frontend/parser.cc
+build $builddir/liz: link $builddir/main.o $builddir/frontend/tokenize.o $builddir/frontend/parser.o
