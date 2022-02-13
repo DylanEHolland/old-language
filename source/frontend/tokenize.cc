@@ -6,6 +6,8 @@
 
 namespace liz::frontend {
     std::string purge_comments(std::string code) {
+        // std::cout << "Running purge_comments..." << std::endl;
+
         std::string purged_buffer = "";
         bool add_char = true;
         for(int i = 0; i < code.length(); i++) {
@@ -24,14 +26,16 @@ namespace liz::frontend {
         return purged_buffer;
     }
 
-    void tokenize(std::string code) {
+    std::vector<std::string> tokenize(std::string code) {
         code = purge_comments(code);
+
+        //std::cout << "Running tokenize..." << std::endl;
         std::vector<std::string> token_list;
         std::string local_token = "";
-
+        
         for(int i = 0; i < code.length(); i++) {
             char char_token = code[i];
-            
+            //std::cout << "-> " << i << ". " << char_token << std::endl;
             if(char_token == ' ' || char_token == '\n') {
                 if(local_token.length() > 0) {
                     token_list.push_back(local_token);
@@ -39,14 +43,19 @@ namespace liz::frontend {
                 local_token = "";
             } else if(char_token == ':') {
                 token_list.push_back("typeis");
+            } else if(char_token == '{') {
+                token_list.push_back("{");
+                local_token = "";
+            } else if(char_token == '}') {
+                token_list.push_back("}");
+                local_token = "";
             } else {
                 local_token.push_back(char_token);
             }
         }
 
-        for(std::string str : token_list) {
-            std::cout << str << std::endl;
-        }
+        token_list.push_back("EOF");
+        return token_list;
     };
 
 

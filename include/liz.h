@@ -1,3 +1,2 @@
-namespace liz {
-    
-}
+#pragma once
+namespace liz {}

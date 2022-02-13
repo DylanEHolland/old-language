@@ -1,0 +1,4 @@
+struct test {
+    index: integer,
+    value: any
+}
