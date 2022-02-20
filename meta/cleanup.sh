@@ -4,3 +4,8 @@ rm -v libfrontend.a;
 rm -v CMakeCache.txt;
 rm -rfv CMakeFiles;
 rm -v cmake_install.cmake;
+rm -v Makefile;
+rm -v build.ninja;
+rm -v .ninja_deps;
+rm -v .ninja_log;
+rm -v lizvm;

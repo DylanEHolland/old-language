@@ -1,13 +1,1 @@
 build
-CMakeFiles/
-CmakeCache.txt
-cmake_install.cmake
-libfrontend.a
-libvm.a
-liblizasm.a
-Makefile
-liz
-.ninja_deps
-.ninja_log
-build.ninja
-lizvm
