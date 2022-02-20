@@ -36,6 +36,10 @@ add_executable(liz
   source/main.cc
 )
 
+add_executable(lizassembler
+  source/tools/lizasm.cc
+)
+
 add_executable(lizvm
   source/lizvm.cc
 )

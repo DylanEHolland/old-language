@@ -12,7 +12,6 @@ using std::filesystem::exists;
 using std::filesystem::file_size;
 
 namespace liz {
-
     struct frontend::node *load_file(char *file_name) {
         if(exists(file_name)) {
             std::ifstream f(file_name, std::ios::in | std::ios::binary);
@@ -29,7 +28,6 @@ namespace liz {
             exit(-1);
         }
     }
-
 }
 
 int main(int argc, char **argv) {

@@ -1,1 +1,5 @@
 build
+.vscode/launch.json
+.vscode/tasks.json
+*.dSYM
+source/tools/lizasm
